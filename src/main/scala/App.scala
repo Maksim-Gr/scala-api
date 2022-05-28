@@ -1,4 +1,4 @@
-package com.github.scala_api
+package com.github.scalaApi
 
 
 import cats.effect.{ExitCode, IO, IOApp}
@@ -8,10 +8,10 @@ import org.http4s.implicits._
 import org.http4s.blaze.server.BlazeServerBuilder
 import scala.concurrent.ExecutionContext
 
-object PingApp extends IOApp {
+object App extends IOApp {
 
   private val httpApp = Router(
-    "/" -> new PingApi().routes
+    "/" -> new Api().routes
   ).orNotFound
 
   override def run(args: List[String]): IO[ExitCode] =
